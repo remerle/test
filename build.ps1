@@ -9,7 +9,7 @@ $Env:GOOS = "darwin"; $Env:GOARCH = "amd64"; go build -ldflags "-X main.Version=
 Write-Output "Building Windows Binary"
 $Env:GOOS = "windows"; $Env:GOARCH = "amd64"; go build -ldflags "-X main.Version=v$ver" -o bin/core-$Env:GOOS-$Env:GOARCH.exe
 
-Write-Output "Pushing v$ver to GitHub"
-git commit -q -a -m "Latest binaries v$ver"
+Write-Output "Pushing $ver to GitHub"
+git commit -q -a -m "Latest binaries $ver"
 git push -q origin
 Write-Output "Done"
